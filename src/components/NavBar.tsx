@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Folder, CheckSquare, MessageCircle, FileText, Users, Settings, Menu, X } from 'lucide-react';
+import { Home, Folder, CheckSquare, MessageCircle, FileText, Users, Settings, Menu, X, CalendarDays } from 'lucide-react';
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,6 +10,7 @@ const NavBar = () => {
   const navigationItems = [
     { name: 'Home', path: '/', icon: <Home size={20} /> },
     { name: 'Projects', path: '/projects', icon: <Folder size={20} /> },
+    { name: 'Calendar', path: '/calendar', icon: <CalendarDays size={20} /> },
     { name: 'Tasks', path: '/tasks', icon: <CheckSquare size={20} /> },
     { name: 'Messages', path: '/messages', icon: <MessageCircle size={20} /> },
     { name: 'Files', path: '/files', icon: <FileText size={20} /> },

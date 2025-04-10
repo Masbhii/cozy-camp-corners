@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ChevronLeft, Settings, Calendar, AlertCircle, CheckCircle } from 'lucide-react';
@@ -88,41 +87,38 @@ const Project = () => {
   };
 
   const getStatusIcon = () => {
-    switch (project.status) {
-      case 'on-track':
-        return <CheckCircle size={16} className="text-green-500" />;
-      case 'at-risk':
-        return <AlertCircle size={16} className="text-amber-500" />;
-      case 'behind':
-        return <AlertCircle size={16} className="text-red-500" />;
-      default:
-        return <CheckCircle size={16} className="text-green-500" />;
+    if (project.status === 'on-track') {
+      return <CheckCircle size={16} className="text-green-500" />;
+    } else if (project.status === 'at-risk') {
+      return <AlertCircle size={16} className="text-amber-500" />;
+    } else if (project.status === 'behind') {
+      return <AlertCircle size={16} className="text-red-500" />;
+    } else {
+      return <CheckCircle size={16} className="text-green-500" />;
     }
   };
 
   const getStatusText = () => {
-    switch (project.status) {
-      case 'on-track':
-        return 'On Track';
-      case 'at-risk':
-        return 'At Risk';
-      case 'behind':
-        return 'Behind';
-      default:
-        return 'On Track';
+    if (project.status === 'on-track') {
+      return 'On Track';
+    } else if (project.status === 'at-risk') {
+      return 'At Risk';
+    } else if (project.status === 'behind') {
+      return 'Behind';
+    } else {
+      return 'On Track';
     }
   };
 
   const getStatusColor = () => {
-    switch (project.status) {
-      case 'on-track':
-        return 'bg-green-100 text-green-700';
-      case 'at-risk':
-        return 'bg-amber-100 text-amber-700';
-      case 'behind':
-        return 'bg-red-100 text-red-700';
-      default:
-        return 'bg-green-100 text-green-700';
+    if (project.status === 'on-track') {
+      return 'bg-green-100 text-green-700';
+    } else if (project.status === 'at-risk') {
+      return 'bg-amber-100 text-amber-700';
+    } else if (project.status === 'behind') {
+      return 'bg-red-100 text-red-700';
+    } else {
+      return 'bg-green-100 text-green-700';
     }
   };
 
